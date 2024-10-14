@@ -1,6 +1,6 @@
 # Scripts Repository
 
-Welcome to the tanbi-org/scripts repository! This repository contains scripts for reinstalling from Debian systems to the latest stable version (Debian Stable or Arch Linux), supporting Btrfs file system, ZRAM, and using systemd for time synchronization and network management.
+Welcome to the taobil/scripts repository! This repository contains scripts for reinstalling from Debian systems to the latest stable version (Debian Stable or Arch Linux), supporting Btrfs file system, ZRAM, and using systemd for time synchronization and network management.
 
 #### Features
 - Uses Btrfs file system
