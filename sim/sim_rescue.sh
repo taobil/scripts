@@ -95,7 +95,7 @@ function sim::copy_important_config(){
   mkdir -p "${sim_root}/etc"
   #cp -axL --remove-destination /etc/resolv.conf "${sim_root}/etc"
   sim::log "[*] Copying or user custom resolv.conf..."
-  local nameserver="nameserver 8.8.8.8\nnameserver 1.1.1.1\nnameserver 2606:4700:4700::1111"
+  local nameserver="nameserver 1.1.1.1\nnameserver 8.8.8.8\nnameserver 2606:4700:4700::1111"
   echo -e "${nameserver}" > "${sim_root}/etc/resolv.conf"
   return 0
 }
