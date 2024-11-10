@@ -420,6 +420,10 @@ function sim::parse_arguments() {
 				password="$2"
 				shift
 				;;
+			--disk)
+				disk="$2"
+				shift
+				;;
 			--dhcp)
 				dhcp='true'
 				;;
