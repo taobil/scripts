@@ -17,6 +17,7 @@ The `sim.sh` script allows you to reinstall from a Debian system to the latest D
 #### Parameters
 - `--dhcp`: Enable DHCP functionality
 - `--pwd <password>`: Set user password
+- `--disk <disk>`: Set install disk,eg. /dev/sda
 - `--mirror <mirror_url>`: Specify mirror source
 
 
