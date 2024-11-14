@@ -212,11 +212,11 @@ chattr +C /mnt/@var_cache
 umount /mnt
 mount -o compress-force=zstd,noatime,subvol=@ \${disk}2 /mnt
 mkdir -p /mnt/{swap,tmp} /mnt/var/{tmp,cache} /mnt/srv
-mount -o subvol=@srv \${disk}2 /mnt/srv
-mount -o subvol=@tmp \${disk}2 /mnt/tmp
-mount -o subvol=@swap \${disk}2 /mnt/swap
-mount -o subvol=@var_tmp \${disk}2 /mnt/var/tmp
-mount -o subvol=@var_cache \${disk}2 /mnt/var/cache
+mount -o noatime,subvol=@srv \${disk}2 /mnt/srv
+mount -o noatime,subvol=@tmp \${disk}2 /mnt/tmp
+mount -o noatime,subvol=@swap \${disk}2 /mnt/swap
+mount -o noatime,subvol=@var_tmp \${disk}2 /mnt/var/tmp
+mount -o noatime,subvol=@var_cache \${disk}2 /mnt/var/cache
 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 512M
 swapon /mnt/swap/swapfile
 
