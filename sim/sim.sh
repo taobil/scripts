@@ -199,17 +199,20 @@ partprobe
 mkfs.btrfs -f -L LINUX \${disk}2
 mount -o compress-force=zstd \${disk}2 /mnt
 btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@srv
 btrfs subvolume create /mnt/@tmp
 btrfs subvolume create /mnt/@swap
 btrfs subvolume create /mnt/@var_tmp
 btrfs subvolume create /mnt/@var_cache
+chattr +C /mnt/@srv
 chattr +C /mnt/@tmp
 chattr +C /mnt/@swap
 chattr +C /mnt/@var_tmp
 chattr +C /mnt/@var_cache
 umount /mnt
 mount -o compress-force=zstd,noatime,subvol=@ \${disk}2 /mnt
-mkdir -p /mnt/{swap,tmp} /mnt/var/{tmp,cache}
+mkdir -p /mnt/{swap,tmp} /mnt/var/{tmp,cache} /mnt/srv
+mount -o subvol=@srv \${disk}2 /mnt/srv
 mount -o subvol=@tmp \${disk}2 /mnt/tmp
 mount -o subvol=@swap \${disk}2 /mnt/swap
 mount -o subvol=@var_tmp \${disk}2 /mnt/var/tmp
